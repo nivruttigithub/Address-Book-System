@@ -42,7 +42,21 @@ public class AddressBook {
         ContactCreation contact = new ContactCreation(firstName, lastName, address, city, state, zip, phoneNumber, email);
         addContact(contact);
     }
+    // Method to add multiple contacts
+    public void addMultipleContactsFromConsole() {
+        Scanner scanner = new Scanner(System.in);
+        boolean addingMore = true;
 
+        while (addingMore) {
+            addContactFromConsole(); // Add a single contact
+            System.out.println("Do you want to add another contact? (yes/no): ");
+            String response = scanner.nextLine();
+
+            if (response.equalsIgnoreCase("no")) {
+                addingMore = false; // Exit loop if the user says 'no'
+            }
+        }
+    }
     // Method to display all contacts
     public void displayAllContacts() {
         if (contacts.isEmpty()) {
