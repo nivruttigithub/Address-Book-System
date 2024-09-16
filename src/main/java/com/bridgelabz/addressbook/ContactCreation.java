@@ -21,6 +21,7 @@ public class ContactCreation {
         this.phoneNumber = phoneNumber;
         this.email = email;
     }
+
     public void displayContact() {
         System.out.println("Name: " + firstName + " " + lastName);
         System.out.println("Address: " + address);
@@ -29,4 +30,5 @@ public class ContactCreation {
         System.out.println("Email: " + email);
         System.out.println();
     }
+
 }
