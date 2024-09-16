@@ -12,7 +12,8 @@ public class AddressBookMain {
             System.out.println("1. Add New Contact");
             System.out.println("2. Display All Contacts");
             System.out.println("3. Edit Contact");
-            System.out.println("4. Exit");
+            System.out.println("4. Delete Contact");
+            System.out.println("5. Exit: ");
             System.out.print("Choose an option: ");
             int choice = scanner.nextInt();
             scanner.nextLine(); // Consume newline
@@ -31,7 +32,14 @@ public class AddressBookMain {
                     String lastName = scanner.nextLine();
                     addressBook.editContact(firstName, lastName);  // Calls the edit method
                     break;
-                case 4:
+                case 4: // Delete contact functionality
+                    System.out.println("Enter First Name of the contact to delete: ");
+                    String firstNameToDelete = scanner.nextLine();
+                    System.out.println("Enter Last Name of the contact to delete: ");
+                    String lastNameToDelete = scanner.nextLine();
+                    addressBook.deleteContact(firstNameToDelete, lastNameToDelete);
+                    break;
+                case 5:
                     running = false;
                     System.out.println("Exiting Address Book...");
                     break;

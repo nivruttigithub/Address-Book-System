@@ -96,4 +96,13 @@ public class AddressBook {
         System.out.println("Contact details updated successfully.");
     }
 
+    public void deleteContact(String firstName, String lastName) {
+        ContactCreation contact = searchContact(firstName, lastName);
+        if (contact == null) {
+            System.out.println("Contact not found.");
+            return;
+        }
+        contacts.remove(contact);
+        System.out.println("Contact deleted successfully.");
+    }
 }
